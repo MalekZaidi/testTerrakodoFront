@@ -1,13 +1,19 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http'; 
 import { AuthService } from '../../services/auth.service';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';  
+import { FormsModule } from '@angular/forms'; 
+import { Router, provideRouter } from '@angular/router';
 
 @Component({
-  standalone: true,
-  imports: [FormsModule, HttpClientModule], 
   selector: 'app-login',
+  standalone: true,
+  imports: [
+    FormsModule,
+    HttpClientModule, 
+  ],
+  providers: [
+    AuthService, // Ensure AuthService is provided here
+  ],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })

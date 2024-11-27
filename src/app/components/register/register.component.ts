@@ -3,8 +3,10 @@ import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { FormsModule } from '@angular/forms';
 
-@Component({standalone: true,  // This makes the component standalone
-  imports: [FormsModule], // Import HttpClientModule along with other modules
+@Component({standalone: true, 
+  imports: [FormsModule], providers: [
+    AuthService, 
+  ], 
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css'],
