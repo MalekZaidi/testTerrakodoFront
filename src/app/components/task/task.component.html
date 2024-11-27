@@ -1,0 +1,17 @@
+<div class="task-list">
+    <h2>My Tasks</h2>
+    <a routerLink="/task/add">Add New Task</a>
+    <ul>
+      <li *ngFor="let task of tasks">
+        <h3 [class.completed]="task.is_completed">{{ task.title }}</h3>
+        <p>{{ task.description }}</p>
+        <p>Priority: {{ task.priority }}</p>
+        <p>Due Date: {{ task.due_date }}</p>
+        <button (click)="toggleCompletion(task)">
+          Mark as {{ task.is_completed ? 'Incomplete' : 'Complete' }}
+        </button>
+        <button (click)="deleteTask(task.id)">Delete</button>
+      </li>
+    </ul>
+  </div>
+  

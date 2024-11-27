@@ -1,0 +1,23 @@
+<div class="task-form">
+    <h2>Add Task</h2>
+    <form (ngSubmit)="saveTask()">
+      <div>
+        <label for="title">Title:</label>
+        <input id="title" type="text" [(ngModel)]="taskData.title" name="title" required />
+      </div>
+      <div>
+        <label for="description">Description:</label>
+        <textarea id="description" [(ngModel)]="taskData.description" name="description"></textarea>
+      </div>
+      <div>
+        <label for="priority">Priority (1-5):</label>
+        <input id="priority" type="number" [(ngModel)]="taskData.priority" name="priority" min="1" max="5" required />
+      </div>
+      <div>
+        <label for="due_date">Due Date:</label>
+        <input id="due_date" type="date" [(ngModel)]="taskData.due_date" name="due_date" />
+      </div>
+      <button type="submit">Save Task</button>
+    </form>
+  </div>
+  
